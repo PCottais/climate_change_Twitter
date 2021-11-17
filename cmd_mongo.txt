@@ -1,0 +1,30 @@
+# 1. open new Windows cmd
+cd "C:\Program Files\MongoDB\Server\5.0\bin"
+mongod
+
+# 2. open new Windows cmd
+cd "C:\Program Files\MongoDB\Server\5.0\bin"
+mongo
+show dbs
+
+# Import. open new Windows cmd (Do only once)
+md data/db
+cd "C:\Program Files\MongoDB\Server\5.0\bin"
+mongoimport -d mydb -c twitter C:\Users\pierr\Documents\institut_Agro\Big_Data\Projet\Twitter\data\data_coll.jsonl
+
+# Drop. 
+cd "C:\Program Files\MongoDB\Server\5.0\bin"
+use mydb
+db.dropDatabase()
+
+```An
+#Import JSONL, open new Windows cmd 
+cd "C:\Program Files\MongoDB\Tools\100\bin"     #to use mongoimport, also move ID_py.jsonl file to same directory
+mongoimport --db mydb --collection twitter --file ID_py.jsonl
+
+# Explore file structure
+cd "C:\Program Files\MongoDB\Server\5.0\bin"
+mongo
+use mydb
+show collections
+db.twitter.find().pretty()
