@@ -14,17 +14,8 @@ mongoimport -d mydb -c twitter C:\Users\pierr\Documents\institut_Agro\Big_Data\P
 
 # Drop. 
 cd "C:\Program Files\MongoDB\Server\5.0\bin"
-use mydb
-db.dropDatabase()
-
-```An
-#Import JSONL, open new Windows cmd 
-cd "C:\Program Files\MongoDB\Tools\100\bin"     #to use mongoimport, also move ID_py.jsonl file to same directory
-mongoimport --db mydb --collection twitter --file ID_py.jsonl
-
-# Explore file structure
-cd "C:\Program Files\MongoDB\Server\5.0\bin"
-mongo
+show dbs
 use mydb
 show collections
-db.twitter.find().pretty()
+db.dropDatabase()
+
