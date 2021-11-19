@@ -450,8 +450,8 @@ tweet3.repartition(500).limit(3).select('token_nostp','tokens_clean').toPandas()
 # Remove tweets where the tokens array is empty, i.e. where it was just
 # hashtag, web adress etc.
 tweet = tweet3.where(F.size(F.col("tokens_clean")) > 0)
-tweet.limit(2).toPandas()
-tweet.count()        #18853 tweets left
+# tweet.limit(2).toPandas()
+# tweet.count()        #18853 tweets left
 
 # sauvegarde du jeu de données final
 tweet.repartition(20).select("sentiment","tweetid","tokens_clean") \
